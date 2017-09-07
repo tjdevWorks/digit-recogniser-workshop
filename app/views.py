@@ -14,14 +14,12 @@ def index():
 
 @app.route('/_do_ocr', methods=['GET', 'POST'])
 def do_ocr():
-	"""Add two numbers server side, ridiculous but well..."""
-	app.logger.debug("Accessed _do_ocr page with image data")
-	data = request.args.get('imgURI', 0, type=str)
-	index = request.args.get('index', 0, type=int)
-
-	char_prediction, percentage = predict(preprocess(data))
-
-	result = "Predicting you entered a: {} with {:.2f} %".format(char_prediction, percentage)
-
-	app.logger.debug("Recognized a character "+str(char_prediction))
-	return jsonify(result=result)
+    """Add two numbers server side, ridiculous but well..."""
+    app.logger.debug("Accessed _do_ocr page with image data")
+    data = request.args.get('imgURI', 0, type=str)
+    index = request.args.get('index', 0, type=int)
+    #char_prediction, percentage = predict(preprocess(data))
+    #result = "Predicting you entered a: {} with {:.2f} %".format(char_prediction, percentage)
+    result = "You still have to build a model to view results"
+    #app.logger.debug("Recognized a character "+str(char_prediction))
+    return jsonify(result=result)
